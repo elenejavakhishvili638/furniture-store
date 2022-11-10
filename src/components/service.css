@@ -1,0 +1,45 @@
+.service-container {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.service {
+  background: #c5a491;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: 0.25rem;
+}
+
+.icon {
+  /* width: 4rem;
+  height: 4rem;
+  display: grid;
+  margin: 0px auto 1rem;
+  place-items: center; */
+  padding: 10px 13px 6px 13px;
+  border-radius: 50%;
+  background: #eaded7;
+  color: #453227;
+  font-size: 2rem;
+}
+
+@media (min-width: 576px) {
+  .service-container {
+    /* width: 100%; */
+    /* height: 225px; */
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+}
+
+@media (min-width: 1221px) {
+  .service-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .services-container {
+    height: 33rem;
+  }
+}

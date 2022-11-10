@@ -18,7 +18,7 @@ const Hero = () => {
           alias?
         </p>
         <button className="shop-now">
-          <Link to="" className="shop">
+          <Link to="/products" className="shop">
             shop now
           </Link>
         </button>

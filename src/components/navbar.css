@@ -43,6 +43,11 @@ li {
 .btn-container {
   display: none;
 }
+/* 
+.cart-btn,
+.login-btn {
+  display: none;
+} */
 
 @media (min-width: 992px) {
   .navigation-links {

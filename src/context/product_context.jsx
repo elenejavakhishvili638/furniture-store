@@ -1,9 +1,12 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/Product_reducer";
+import { products_url } from "../utils/products";
 
 const initialState = {
   sidebarOpen: false,
-  loading: false,
+  loading: true,
+  // showCart: false,
+  featuredProducts: [],
 };
 
 const ProductContext = createContext();
@@ -13,11 +16,20 @@ const ProductProvider = ({ children }) => {
 
   const openSidebar = () => {
     dispatch({ type: "SIDEBAR_OPEN" });
+    // dispatch({ type: "SHOW_CART" });
   };
 
   const closeSidebar = () => {
     dispatch({ type: "SIDEBAR_CLOSE" });
   };
+
+  useEffect(() => {
+    dispatch({ type: "LOADING_TRUE" });
+    fetch(products_url)
+      .then((res) => res.json())
+      .then((data) => dispatch({ type: "LOAD_PRODUCTS", payload: data }));
+    dispatch({ type: "LOADING_FALSE" });
+  }, []);
 
   return (
     <ProductContext.Provider

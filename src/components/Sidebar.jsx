@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   // console.log(sidebarOpen);
   return (
-    <div className={sidebarOpen ? "sidebar" : "sidebar-close"}>
+    <div className={sidebarOpen ? "sidebar sidebar-show" : "sidebar"}>
       <div className="navbar-container">
         <img alt="logo" src={Logo} className="logo-image" />
         <button className="close-btn" onClick={closeSidebar}>
@@ -31,6 +31,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
+
       <CartBtn />
     </div>
   );

@@ -8,11 +8,13 @@ import CartBtn from "./CartBtn";
 import { useProductContext } from "../context/product_context";
 
 const Navbar = () => {
-  const { openSidebar, closeSidebar } = useProductContext();
+  const { openSidebar } = useProductContext();
   // console.log(openSidebar);
   return (
     <div className="navbar">
-      <img alt="logo" src={Logo} className="logo-image" />
+      <Link to="/">
+        <img alt="logo" src={Logo} className="logo-image" />
+      </Link>
       <button className="bar-btn" onClick={openSidebar}>
         <GoThreeBars />
       </button>
