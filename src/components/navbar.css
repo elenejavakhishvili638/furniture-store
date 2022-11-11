@@ -40,14 +40,17 @@ li {
   display: none;
 }
 
+.navigation-links li {
+  padding: 8px;
+}
+
+.navigation-links a:hover {
+  border-bottom: 2px solid #c5a491;
+}
+
 .btn-container {
   display: none;
 }
-/* 
-.cart-btn,
-.login-btn {
-  display: none;
-} */
 
 @media (min-width: 992px) {
   .navigation-links {

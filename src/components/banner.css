@@ -1,0 +1,23 @@
+.banner {
+  display: flex;
+  background-color: #eaded7;
+  padding: 50px;
+  /* padding: 5px; */
+}
+
+.banner h3 {
+  padding: 5px;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  line-height: 1.25rem;
+}
+
+/* .page-one {
+  color: #795744;
+} */
+
+.page-one a {
+  color: #795744;
+  transition: all 0.3s linear;
+}

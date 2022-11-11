@@ -22,7 +22,8 @@
 }
 
 .sidebar-navigation-links {
-  margin: auto 20px;
+  /* margin: auto 20px 0px; */
+  /* padding-left: 15px; */
 }
 
 .sidebar-navigation-links li {
@@ -53,17 +54,14 @@
   cursor: pointer;
 }
 
-.btn-container {
-  /* margin: 2rem auto; */
-  /* display: flex; */
-  /* display: flex;
-  justify-content: center; */
+.links-list:hover {
+  padding: 1rem 1.5rem;
+  padding-left: 2rem;
+  background: #f1f5f8;
+  color: #243a52;
+  width: 100%;
+  transition: all 0.3s linear;
 }
-
-/* .btn-container-open {
-  display: flex;
-  justify-content: center;
-} */
 
 @media (min-width: 992px) {
   .sidebar {
