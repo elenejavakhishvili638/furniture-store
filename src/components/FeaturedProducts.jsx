@@ -5,7 +5,7 @@ import { useProductContext } from "../context/product_context";
 
 const FeaturedProducts = () => {
   const { featuredProducts } = useProductContext();
-  console.log(featuredProducts);
+  // console.log(featuredProducts);
   return (
     <div className="featured-products">
       <h1>Featured Products</h1>

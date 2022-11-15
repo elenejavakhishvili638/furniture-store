@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
-import reducer from "../reducer/Product_reducer";
+import product_reducer from "../reducer/Product_reducer";
 import { products_url } from "../utils/products";
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
 const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(product_reducer, initialState);
 
   const openSidebar = () => {
     dispatch({ type: "SIDEBAR_OPEN" });

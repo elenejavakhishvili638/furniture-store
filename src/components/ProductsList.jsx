@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { BsFillGridFill } from "react-icons/bs";
 import "./productsList.css";
 import ProductBox from "./ProductBox";
+import { useFilterContext } from "../context/filter_context";
 
 const ProductsList = ({ isActive, setIsActive, products }) => {
+  const { sort_by, changePrice } = useFilterContext();
+  const [active, setActive] = useState(true);
+
+  const price = [
+    "Price (Lowest)",
+    "Price (Highest)",
+    "Name (A - Z)",
+    "Name (Z - A)",
+  ];
+  // console.log(sort_by);
+
+  // className="active-btn bar"
+
+  // className="inactive-btn grid"
+
   return (
     <div className="products-list">
       <div className="product-list-header">
         <div className="btn-icons">
-          <button className="active-btn bar">
-            <FaBars />
-          </button>
-          <button className="inactive-btn grid">
+          <button
+            className={active ? "active-btn bar" : "inactive-btn bar"}
+            onClick={() => {
+              setActive(true);
+            }}
+          >
             <BsFillGridFill />
+          </button>
+          <button
+            className={!active ? "active-btn grid" : "inactive-btn grid"}
+            onClick={() => {
+              setActive(false);
+            }}
+          >
+            <FaBars />
           </button>
         </div>
         <p>{products.length} Products Found</p>
@@ -26,15 +52,24 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
                 className="dropdown-btn-price"
                 onClick={() => setIsActive(!isActive)}
               >
-                <span>Price (Lowest)</span>
+                <span>{sort_by} </span>
                 <i className={isActive ? "arrow up" : "arrow down"} />
               </div>
               {isActive && (
                 <div className="dropdown-content-price">
-                  <button>Price (Lowest)</button>
-                  <button>Price (Highest)</button>
-                  <button>Name (A - Z)</button>
-                  <button>Name (Z - A)</button>
+                  {price.map((item, index) => {
+                    return (
+                      <button
+                        key={index}
+                        onClick={(event) => {
+                          changePrice(event.target.textContent);
+                          setIsActive(!isActive);
+                        }}
+                      >
+                        {item}
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -42,7 +77,7 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
         </div>
       </div>
       <div className="product-list-wrap">
-        <ProductBox products={products} />
+        <ProductBox products={products} active={active} />
       </div>
     </div>
   );

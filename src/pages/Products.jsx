@@ -9,10 +9,11 @@ const Products = () => {
   const { products } = useProductContext();
   const [isActive, setIsActive] = useState(false);
   const [active, setActive] = useState(false);
-  console.log(products);
+
+  // console.log(useProductContext());
 
   const productList = products.map((product) => product.category);
-  console.log(productList);
+  // console.log(productList);
 
   return (
     <div className="products">

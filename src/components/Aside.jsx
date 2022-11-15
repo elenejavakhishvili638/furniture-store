@@ -1,40 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import "./aside.css";
+import { useFilterContext } from "../context/filter_context";
 
 const Aside = ({ isActive, setIsActive }) => {
+  const { filter, changeCompany } = useFilterContext();
+  const [selected, setSelected] = useState(0);
+  const [select, setSelect] = useState(0);
+  // console.log(filter.company);
+  const category = [
+    "all",
+    "office",
+    "living room",
+    "kitchen",
+    "bedroom",
+    "dining",
+    "kids",
+  ];
+
+  const company = ["all", "marcos", "ldiea", "caressa"];
+
+  const handleClass = (index) => {
+    if (selected === index) {
+      return "line";
+    }
+  };
+
   return (
     <aside className="products-aside">
       <input type="text" placeholder="Search" />
+      <h3>category</h3>
       <div className="category">
-        <h3>category</h3>
-        <button>all</button>
-        <button>office</button>
-        <button>living room</button>
-        <button>kitchen</button>
-        <button>bedroom</button>
-        <button>dining</button>
-        <button
-          onClick={(e) => {
-            console.log(e.target.textContent);
-          }}
-          name="company"
-        >
-          kids
-        </button>
+        {category.map((item, index) => {
+          return (
+            <button
+              key={index}
+              name="company"
+              onClick={() => {
+                setSelected(index);
+              }}
+              className={`${handleClass(index)}`}
+            >
+              {item}
+            </button>
+          );
+        })}
       </div>
       <div className="company">
         <h3>company</h3>
         <div className="dropdown">
           <div className="dropdown-btn" onClick={() => setIsActive(!isActive)}>
-            <span>kk</span>
+            <span>{filter.company}</span>
             <i className={isActive ? "arrow up" : "arrow down"} />
           </div>
           {isActive && (
             <div className="dropdown-content">
-              <button>all</button>
-              <button>marcos</button>
-              <button>lidea</button>
-              <button>caressa</button>
+              {company.map((item, index) => {
+                return (
+                  <button
+                    key={index}
+                    onClick={(event) => {
+                      changeCompany(event.target.textContent);
+                      setIsActive(!isActive);
+                    }}
+                  >
+                    {item}
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>

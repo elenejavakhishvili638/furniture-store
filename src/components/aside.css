@@ -4,7 +4,7 @@
   z-index: 3;
   margin-right: 25px;
   background: #f1f5f8;
-  width: 114px;
+  width: 130px;
 }
 
 .dropdown .dropdown-btn {
@@ -40,7 +40,7 @@
   position: absolute;
   color: #333;
   height: 140px;
-  width: 114px;
+  width: 130px;
   top: 30px;
 }
 
@@ -128,9 +128,14 @@
 
 .category {
   /* display: grid; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   /* flex-direction: column; */
+}
+
+.line {
+  border-bottom: 1px solid #617d98 !important;
+  opacity: 1 !important;
 }
 
 .category button {
@@ -138,12 +143,16 @@
   opacity: 1;
   padding: 5px 0;
   background-color: transparent;
-  border: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   text-align: left;
   border-bottom: 1px solid transparent;
   letter-spacing: 0.1rem;
   color: #617d98;
   cursor: pointer;
+  display: block;
+  text-transform: capitalize;
 }
 
 .color-list {
