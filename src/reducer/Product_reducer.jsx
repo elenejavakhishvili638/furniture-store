@@ -13,12 +13,12 @@ const product_reducer = (state, action) => {
   }
 
   if (action.type === "LOADING_TRUE") {
-    console.log(true);
+    // console.log(true);
     return { ...state, loading: true };
   }
 
   if (action.type === "LOADING_FALSE") {
-    console.log(false);
+    // console.log(false);
     return { ...state, loading: false };
   }
 
@@ -31,6 +31,10 @@ const product_reducer = (state, action) => {
       ...state,
       featuredProducts: featuredProducts,
     };
+  }
+
+  if (action.type === "PRODUCTS") {
+    return { ...state, products: action.payload };
   }
 };
 

@@ -1,0 +1,194 @@
+.products-list {
+  margin: 0 1rem 4rem 1rem;
+}
+
+.product-list-header {
+  margin-bottom: 2rem;
+}
+
+.dropdown-price {
+  position: relative;
+  display: inline-block;
+  z-index: 3;
+  margin-right: 25px;
+  /* background: #f1f5f8; */
+  /* width: 114px; */
+}
+
+.dropdown-btn-price {
+  font-weight: bold;
+  color: #333;
+  align-items: center;
+  cursor: pointer;
+  color: #1d1f22;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 0.25rem;
+  border-color: transparent;
+  /* justify-content: space-between; */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dropdown-btn-price span {
+  padding-right: 1rem;
+  padding-left: 0.2rem;
+  /* font-size: 0.875rem; */
+}
+
+.dropdown-btn-price i {
+  margin-right: 1rem;
+}
+
+.dropdown-content-price {
+  background-color: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+  position: absolute;
+  color: #333;
+  height: 140px;
+  width: 182px;
+  top: 30px;
+}
+
+.dropdown-content-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content-price button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 0;
+  text-align: left;
+  padding-left: 3px;
+  color: #243a52;
+}
+
+.dropdown-content-price button:hover {
+  background: #f1f5f8;
+  color: #243a52;
+}
+
+/* .dropdown-item {
+    padding: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    font-family: Raleway;
+    font-weight: 500;
+    color: #1d1f22;
+    font-size: 18px;
+  } */
+
+/* .dropdown .dropdown-content .dropdown-item:hover {
+  background-color: #eeeeee;
+} */
+
+.arrow {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  height: 3px;
+  width: 6px;
+  margin-left: 5px;
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-bottom: 5px;
+}
+
+.active-btn {
+  background-color: black;
+  color: white;
+}
+
+.inactive-btn {
+  background-color: transparent;
+  color: black;
+}
+
+.btn-icons {
+  display: flex;
+}
+
+.bar {
+  margin-right: 0.5rem;
+}
+
+.btn-icons button {
+  border: 1px solid black;
+  width: 1.5rem;
+  /* background: transparent; */
+  /* color: black; */
+  flex-direction: column;
+  border-radius: 0.25rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sortby {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.sortby p {
+  margin-right: 3rem;
+}
+
+@media (min-width: 577px) {
+  .product-list-header {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    gap: 1rem;
+    /* justify-content: space-between; */
+    /* margin: 3px; */
+  }
+
+  hr {
+    /* margin: 0; */
+    width: 100%;
+    /* line-height: 1.5rem; */
+    /* width: 20%; */
+    /* margin-top: 50px;
+    margin-bottom: 50px; */
+    border: none;
+    border-top: 1px solid #bcccdc;
+  }
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sortby p {
+    margin-right: 1rem;
+  }
+
+  .dropdown-price {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .products-list {
+    margin: 2rem 1rem 4rem 1rem;
+  }
+}

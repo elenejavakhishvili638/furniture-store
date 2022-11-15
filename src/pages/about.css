@@ -2,11 +2,10 @@
   width: 90vw;
   margin: 4rem auto;
   display: grid;
-  /* display: grid; */
 }
 
 .about-content img {
-  min-height: 6rem;
+  height: 450px;
   object-fit: cover;
   width: 100%;
   border-radius: 0.25rem;
@@ -19,17 +18,12 @@
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  /* max-width: 225px; */
-  /* text-decoration: underline; */
-  /* border-bottom: 2px solid #ab7a5f; */
-  /* border-width: 6rem; */
 }
 
 .underline {
   width: 6rem;
   height: 2px;
   background-color: #ab7a5f;
-  /* justify-content: left; */
 }
 
 .about-content p {
@@ -44,8 +38,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    /* align-items: center; */
-    /* justify-content: space-between; */
   }
 
   .about-content h2 {

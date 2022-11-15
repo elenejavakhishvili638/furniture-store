@@ -7,6 +7,7 @@ const initialState = {
   loading: true,
   // showCart: false,
   featuredProducts: [],
+  products: [],
 };
 
 const ProductContext = createContext();
@@ -28,6 +29,14 @@ const ProductProvider = ({ children }) => {
     fetch(products_url)
       .then((res) => res.json())
       .then((data) => dispatch({ type: "LOAD_PRODUCTS", payload: data }));
+    dispatch({ type: "LOADING_FALSE" });
+  }, []);
+
+  useEffect(() => {
+    dispatch({ type: "LOADING_TRUE" });
+    fetch(products_url)
+      .then((res) => res.json())
+      .then((data) => dispatch({ type: "PRODUCTS", payload: data }));
     dispatch({ type: "LOADING_FALSE" });
   }, []);
 

@@ -1,0 +1,10 @@
+.products-wrap {
+  display: grid;
+  gap: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .products-wrap {
+    grid-template-columns: 1fr 4fr;
+  }
+}

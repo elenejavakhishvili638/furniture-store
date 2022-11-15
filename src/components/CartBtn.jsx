@@ -6,7 +6,7 @@ import { useProductContext } from "../context/product_context";
 const CartBtn = () => {
   const { sidebarOpen } = useProductContext();
 
-  console.log(sidebarOpen);
+  // console.log(sidebarOpen);
 
   return (
     <div
