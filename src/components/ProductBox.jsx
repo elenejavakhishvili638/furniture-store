@@ -2,6 +2,7 @@ import React from "react";
 import "./productBox.css";
 
 const ProductBox = ({ products, active }) => {
+  console.log(products);
   return (
     <div className={active ? "product-box" : "product-box-grid"}>
       {products &&

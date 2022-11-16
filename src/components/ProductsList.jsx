@@ -6,8 +6,10 @@ import ProductBox from "./ProductBox";
 import { useFilterContext } from "../context/filter_context";
 
 const ProductsList = ({ isActive, setIsActive, products }) => {
-  const { sort_by, changePrice } = useFilterContext();
+  const { sort_by, changePrice, filtered_products } = useFilterContext();
   const [active, setActive] = useState(true);
+
+  // console.log(filtered_products);
 
   const price = [
     "Price (Lowest)",

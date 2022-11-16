@@ -135,6 +135,9 @@
 
 .line {
   border-bottom: 1px solid #617d98 !important;
+}
+
+.opacity {
   opacity: 1 !important;
 }
 
@@ -177,15 +180,23 @@
   /* width: 5px; */
   color: #617d98;
   cursor: pointer;
-  margin-right: 7px;
-  opacity: 0.5;
+  margin-right: 0.5rem;
+  opacity: 0.3;
   border: none;
-  height: 15px;
-  width: 15px;
-  /* opacity: 1; */
-  /* background-color: #bbb; */
+  /* height: 15px;
+  width: 15px; */
+  height: 1.2rem;
+  width: 1.2rem;
   border-radius: 50%;
-  /* display: inline-block; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn svg {
+  color: white;
+  font-size: 4rem;
 }
 
 .shipping {

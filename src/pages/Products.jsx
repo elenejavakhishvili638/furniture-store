@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import "./products.css";
 import Banner from "../components/Banner";
 import { useProductContext } from "../context/product_context";
+import { useFilterContext } from "../context/filter_context";
 import Aside from "../components/Aside";
 import ProductsList from "../components/ProductsList";
 
 const Products = () => {
-  const { products } = useProductContext();
+  const { filtered_products } = useFilterContext();
   const [isActive, setIsActive] = useState(false);
   const [active, setActive] = useState(false);
-
-  // console.log(useProductContext());
-
-  const productList = products.map((product) => product.category);
-  // console.log(productList);
 
   return (
     <div className="products">
@@ -23,7 +19,7 @@ const Products = () => {
         <ProductsList
           isActive={active}
           setIsActive={setActive}
-          products={products}
+          products={filtered_products}
         />
       </div>
     </div>
