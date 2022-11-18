@@ -4,10 +4,18 @@ import { useFilterContext } from "../context/filter_context";
 import { ImCheckmark } from "react-icons/im";
 
 const Aside = ({ isActive, setIsActive }) => {
-  const { filter, changeCompany, filterBy, clearFilters } = useFilterContext();
+  const {
+    filter,
+    changeCompany,
+    filterBy,
+    clearFilters,
+    changePrice,
+    filter: { shipping, text, price },
+  } = useFilterContext();
 
   const [selected, setSelected] = useState(0);
   const [select, setSelect] = useState(0);
+
   // console.log(filter.company);
   const category = [
     "all",
@@ -42,7 +50,14 @@ const Aside = ({ isActive, setIsActive }) => {
 
   return (
     <aside className="products-aside">
-      <input type="text" placeholder="Search" />
+      <input
+        type="text"
+        className="text-input"
+        placeholder="Search"
+        name="text"
+        value={text}
+        onChange={(event) => filterBy(event)}
+      />
       <h3>category</h3>
       <div className="category">
         {category.map((item, index) => {
@@ -77,7 +92,7 @@ const Aside = ({ isActive, setIsActive }) => {
                     name="company"
                     onClick={(event) => {
                       filterBy(event);
-                      changeCompany(event.target.textContent);
+                      changeCompany(item);
                       setIsActive(!isActive);
                     }}
                   >
@@ -118,14 +133,28 @@ const Aside = ({ isActive, setIsActive }) => {
       </div>
       <div className="price">
         <h3>price</h3>
-        <input type="range" />
+        <p className="price-text">
+          ${price.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+        </p>
+        <input
+          className="range-input"
+          type="range"
+          name="price"
+          min="0"
+          max="309999"
+          value={price}
+          onChange={(event) => {
+            console.log(parseInt(event.target.value));
+            filterBy(event);
+          }}
+        />
       </div>
       <div className="shipping">
         <label>free shipping</label>
         <input
           type="checkbox"
           name="shipping"
-          // checked={}
+          checked={shipping}
           onChange={(event) => {
             filterBy(event);
             console.log(event.target.checked);
@@ -136,6 +165,10 @@ const Aside = ({ isActive, setIsActive }) => {
         className="clear-filters"
         onClick={() => {
           clearFilters();
+          setSelected(0);
+          setSelect(0);
+          changeCompany("all");
+          changePrice("Price (Lowest)");
         }}
       >
         Clear Filters

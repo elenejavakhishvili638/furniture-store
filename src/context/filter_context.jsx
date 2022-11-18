@@ -8,11 +8,12 @@ const initialState = {
   grid_view: true,
   sort_by: "Price (Lowest)",
   filter: {
+    text: "",
     shipping: false,
     category: "all",
     company: "all",
     colors: "all",
-    price: "",
+    price: 309999,
   },
 };
 
@@ -29,6 +30,10 @@ const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "FILTER" });
   }, [state.filter]);
+
+  useEffect(() => {
+    dispatch({ type: "SORT" });
+  }, [state.sort_by]);
 
   const changeCompany = (clicked) => {
     dispatch({ type: "CHANGE_COMPANY", payload: clicked });
@@ -58,9 +63,24 @@ const FilterProvider = ({ children }) => {
       value = event.target.checked;
     }
 
-    console.log("name", name, "value", value);
+    if (name === "price") {
+      value = parseInt(event.target.value);
+    }
+
+    // console.log("name", name, "value", value);
     dispatch({ type: "FILTER_BY", payload: { name, value } });
     // dispatch({ type: "FILTER" });
+  };
+
+  const sortBy = (event) => {
+    // let name = event.target.name;
+    let value = event.target.textContent;
+
+    // if (name === "sort_by") {
+    //   value = event.target.textContent;
+    // }
+
+    dispatch({ type: "SORT_BY", payload: { value } });
   };
 
   const clearFilters = () => {
@@ -75,6 +95,7 @@ const FilterProvider = ({ children }) => {
         changePrice,
         filterBy,
         clearFilters,
+        sortBy,
       }}
     >
       {children}

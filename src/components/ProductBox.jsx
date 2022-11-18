@@ -2,7 +2,7 @@ import React from "react";
 import "./productBox.css";
 
 const ProductBox = ({ products, active }) => {
-  console.log(products);
+  // console.log(products);
   return (
     <div className={active ? "product-box" : "product-box-grid"}>
       {products &&
@@ -24,7 +24,12 @@ const ProductBox = ({ products, active }) => {
                   <img className="pic" alt="pic" src={image} />
                   <div className="product-description">
                     <h4 className="product-name">{name}</h4>
-                    <h4 className="product-price">${price}</h4>
+                    <h4 className="product-price">
+                      $
+                      {price
+                        .toFixed(2)
+                        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                    </h4>
                   </div>
                 </div>
               ) : (
@@ -33,7 +38,12 @@ const ProductBox = ({ products, active }) => {
                   <div className="product-description-grid">
                     <div className="grid-header">
                       <h4 className="grid-product-name">{name}</h4>
-                      <h4 className="grid-product-price">${price}</h4>
+                      <h4 className="grid-product-price">
+                        $
+                        {price
+                          .toFixed(2)
+                          .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                      </h4>
                     </div>
                     <h4 className="product-text">{description}</h4>
                     <button className="details">Details</button>

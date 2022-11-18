@@ -6,7 +6,7 @@ import ProductBox from "./ProductBox";
 import { useFilterContext } from "../context/filter_context";
 
 const ProductsList = ({ isActive, setIsActive, products }) => {
-  const { sort_by, changePrice, filtered_products } = useFilterContext();
+  const { sort_by, changePrice, sortBy } = useFilterContext();
   const [active, setActive] = useState(true);
 
   // console.log(filtered_products);
@@ -17,11 +17,6 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
     "Name (A - Z)",
     "Name (Z - A)",
   ];
-  // console.log(sort_by);
-
-  // className="active-btn bar"
-
-  // className="inactive-btn grid"
 
   return (
     <div className="products-list">
@@ -54,7 +49,7 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
                 className="dropdown-btn-price"
                 onClick={() => setIsActive(!isActive)}
               >
-                <span>{sort_by} </span>
+                <span>{sort_by}</span>
                 <i className={isActive ? "arrow up" : "arrow down"} />
               </div>
               {isActive && (
@@ -63,8 +58,10 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
                     return (
                       <button
                         key={index}
+                        name="sort_by"
                         onClick={(event) => {
-                          changePrice(event.target.textContent);
+                          sortBy(event);
+                          changePrice(item);
                           setIsActive(!isActive);
                         }}
                       >

@@ -108,13 +108,14 @@
   max-width: 40vw;
 }
 
-.products-aside input {
+.text-input {
   border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.1rem;
   background: #f1f5f8;
   border-radius: 0.25rem;
   border-color: transparent;
   letter-spacing: 0.1rem;
+  outline: none;
 }
 
 .products-aside h3 {
@@ -126,15 +127,17 @@
   letter-spacing: 0.1rem;
 }
 
-.category {
-  /* display: grid; */
-  /* display: flex;
-  flex-direction: column; */
-  /* flex-direction: column; */
+.price-text {
+  color: #324d67;
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
 
 .line {
   border-bottom: 1px solid #617d98 !important;
+  opacity: 1 !important;
 }
 
 .opacity {
@@ -174,6 +177,7 @@
   padding: 0;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
+  color: #617d98;
 }
 
 .color-list .btn {
@@ -224,4 +228,16 @@
   color: #fff;
   padding: 0.25rem 0.5rem;
   letter-spacing: 0.1rem;
+}
+
+.range-input {
+  /* margin: 0 0.5rem; */
+  /* flex-grow: 1; */
+}
+
+@media (min-width: 992px) {
+  .price-text {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
 }
