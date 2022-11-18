@@ -8,6 +8,7 @@ const initialState = {
   // showCart: false,
   featuredProducts: [],
   products: [],
+  single_product: {},
 };
 
 const ProductContext = createContext();
@@ -40,12 +41,19 @@ const ProductProvider = ({ children }) => {
     dispatch({ type: "LOADING_FALSE" });
   }, []);
 
+  const fetchSingleProduct = (single_product_url) => {
+    fetch(single_product_url)
+      .then((res) => res.json())
+      .then((data) => dispatch({ type: "SINGLE_PRODUCT", payload: data }));
+  };
+
   return (
     <ProductContext.Provider
       value={{
         ...state,
         openSidebar,
         closeSidebar,
+        fetchSingleProduct,
       }}
     >
       {children}

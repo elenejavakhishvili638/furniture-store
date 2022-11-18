@@ -36,6 +36,10 @@ const product_reducer = (state, action) => {
   if (action.type === "PRODUCTS") {
     return { ...state, products: action.payload };
   }
+
+  if (action.type === "SINGLE_PRODUCT") {
+    return { ...state, single_product: action.payload };
+  }
 };
 
 export default product_reducer;
