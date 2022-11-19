@@ -29,14 +29,20 @@ const ImageDescription = ({ single_product }) => {
         {tempStars}
         <p>({reviews} customer reviews)</p>
       </div>
-      <h5>
-        $ {price && price.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-      </h5>
+      <h5>$ {price && price / 100}</h5>
       <p>{description}</p>
-      <p>available: {stock ? "In Stock" : "Out Of Stock"}</p>
-      <p>SKU: {id}</p>
-      <p>brand: {company}</p>
-      <hr />
+      <div className="info-wrap">
+        <p>
+          <span>available:</span> {stock ? "In Stock" : "Out Of Stock"}
+        </p>
+        <p>
+          <span style={{ textTransform: "uppercase" }}>sku:</span> {id}
+        </p>
+        <p>
+          <span>brand:</span> {company}
+        </p>
+      </div>
+      <hr className="product-hr" />
     </div>
   );
 };

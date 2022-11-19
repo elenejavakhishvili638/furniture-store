@@ -1,6 +1,4 @@
 .sidebar {
-  /* display: flex; */
-  /* flex-direction: row; */
   position: fixed;
   top: 0;
   left: 0;
@@ -10,15 +8,11 @@
   background-color: white;
   transform: translate(-100%);
   transition: all 0.3s linear;
-  /* margin: auto 50px; */
 }
 
 .sidebar-show {
-  /* display: none;
-  transform: translate(-100%); */
   transform: translate(0px);
   z-index: 99;
-  /* transition: all 0.3s linear; */
 }
 
 .sidebar-navigation-links li {

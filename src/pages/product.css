@@ -1,9 +1,4 @@
 .product-wrap {
-  /* align-items: center;
-  margin: 4rem 2rem;
-  display: grid;
-  gap: 2.5rem;
-  padding: 80px 0; */
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
@@ -35,4 +30,22 @@
   border-radius: 0.25rem;
 
   border-color: transparent;
+}
+
+.back-to-products a:hover {
+  color: #453227;
+  background: #c5a491;
+}
+
+@media (min-width: 992px) {
+  .product-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .product-wrap {
+    width: 95vw;
+  }
 }

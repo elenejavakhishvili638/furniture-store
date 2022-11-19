@@ -30,3 +30,27 @@
   border: 2px solid #ab7a5f;
   border-radius: 0.25rem;
 }
+
+@media (min-width: 576px) {
+  .main-image img {
+    height: 600px;
+  }
+
+  .image-list {
+    height: 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-image img {
+    height: 500px;
+  }
+
+  .image-list {
+    height: 90px;
+  }
+
+  .product-image-container {
+    width: 45vw;
+  }
+}

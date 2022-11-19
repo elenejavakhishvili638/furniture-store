@@ -1,0 +1,43 @@
+.choose-color span {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #102a42;
+}
+
+.choose-color {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 300px;
+}
+
+.choose-colors {
+  display: flex;
+  align-items: center;
+}
+
+.chosen-color {
+  color: #617d98;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  opacity: 0.5;
+  border: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chosen-color svg {
+  font-size: 0.75rem;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .choose-color {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

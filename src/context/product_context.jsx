@@ -42,9 +42,11 @@ const ProductProvider = ({ children }) => {
   }, []);
 
   const fetchSingleProduct = (single_product_url) => {
+    dispatch({ type: "LOADING_TRUE" });
     fetch(single_product_url)
       .then((res) => res.json())
       .then((data) => dispatch({ type: "SINGLE_PRODUCT", payload: data }));
+    dispatch({ type: "LOADING_FALSE" });
   };
 
   return (

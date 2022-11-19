@@ -35,12 +35,19 @@
   border-radius: 0.25rem;
   border-color: transparent;
   text-transform: uppercase;
-  /* width: 90px; */
+}
+
+.shop-now:hover {
+  background: #c5a491;
 }
 
 .shop {
   color: #eaded7;
   text-decoration: none;
+}
+
+.shop:hover {
+  color: #453227;
 }
 
 .right-side {
@@ -90,7 +97,6 @@
 
   .hero-text {
     font-size: 1.25rem;
-    /* word-break: break-word; */
   }
 
   .shop-now {

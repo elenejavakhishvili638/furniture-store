@@ -9,7 +9,7 @@ import { useProductContext } from "../context/product_context";
 
 const Navbar = () => {
   const { openSidebar } = useProductContext();
-  // console.log(openSidebar);
+
   return (
     <div className="navbar">
       <Link to="/">

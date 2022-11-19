@@ -21,11 +21,7 @@
 }
 
 .sub {
-  /* width: 90vw; */
   width: 100%;
-  /* width: 550px; */
-  /* display: grid; */
-  /* grid-template-columns: 1fr auto; */
 }
 
 .sub input {
@@ -51,6 +47,10 @@
   color: #222;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+}
+
+.sub button:hover {
+  color: white;
 }
 
 @media (min-width: 992px) {

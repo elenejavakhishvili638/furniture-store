@@ -16,7 +16,6 @@ const Services = () => {
             dolore aut vero consequuntur.
           </p>
         </div>
-        {/* <div className="service-wrap">  </div> */}
         <Service />
       </div>
     </div>

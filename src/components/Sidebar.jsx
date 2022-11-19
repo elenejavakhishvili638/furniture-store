@@ -10,7 +10,6 @@ import { useProductContext } from "../context/product_context";
 const Sidebar = () => {
   const { sidebarOpen, closeSidebar } = useProductContext();
 
-  // console.log(sidebarOpen);
   return (
     <div className={sidebarOpen ? "sidebar sidebar-show" : "sidebar"}>
       <div className="navbar-container">
@@ -31,7 +30,6 @@ const Sidebar = () => {
           );
         })}
       </ul>
-
       <CartBtn />
     </div>
   );

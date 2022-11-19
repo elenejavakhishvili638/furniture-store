@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import "./addToCart.css";
 
 const AddToCart = ({ single_product }) => {
-  const { colors } = single_product;
   return (
     <div className="add-to-cart-container">
-      <div className="choose-color">
-        <p>Colors:</p>
-        {colors && colors.map((color, index) => <p key={index}>{color}</p>)}
-      </div>
       <div className="choose-amount">
-        <button>-</button>1<button>+</button>
+        <button>-</button>
+        <h2>1</h2>
+        <button>+</button>
+      </div>
+      <div className="add-to-cart">
+        <button className="add-to-cart-btn">add to cart</button>
       </div>
     </div>
   );

@@ -9,8 +9,6 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
   const { sort_by, changePrice, sortBy } = useFilterContext();
   const [active, setActive] = useState(true);
 
-  // console.log(filtered_products);
-
   const price = [
     "Price (Lowest)",
     "Price (Highest)",

@@ -1,15 +1,8 @@
 import React from "react";
 import "./imageContainer.css";
 
-const ImageContainer = ({
-  single_product,
-  index,
-  setIndex,
-  active,
-  setActive,
-}) => {
+const ImageContainer = ({ single_product, index, setIndex }) => {
   const { images } = single_product;
-  console.log(images);
 
   return (
     <div className="product-image-container">
@@ -31,7 +24,6 @@ const ImageContainer = ({
                 }
                 onClick={() => {
                   setIndex(val);
-                  // setActive(false);
                 }}
               />
             );

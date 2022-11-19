@@ -1,0 +1,47 @@
+.choose-amount {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 150px;
+  text-align: center;
+}
+
+.choose-amount h2 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 0.1rem;
+  color: #102a42;
+}
+
+.choose-amount button {
+  border: transparent;
+  background-color: transparent;
+  /* padding: 1rem 0px; */
+  font-size: 2rem;
+}
+
+.add-to-cart-btn {
+  margin-top: 1rem;
+  width: 140px;
+  text-transform: uppercase;
+  background: #ab7a5f;
+
+  color: #eaded7;
+
+  padding: 0.375rem 0.75rem;
+  letter-spacing: 0.1rem;
+
+  font-weight: 400;
+  transition: all 0.3s linear;
+
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  border-radius: 0.25rem;
+
+  border-color: transparent;
+}
+
+.add-to-cart-btn:hover {
+  color: #453227;
+  background: #c5a491;
+}

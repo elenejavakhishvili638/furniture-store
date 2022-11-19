@@ -115,7 +115,6 @@ const Aside = ({ isActive, setIsActive }) => {
                 data-color={color}
                 onClick={(event) => {
                   setSelect(index);
-                  // console.log("ttt");
                   filterBy(event);
                 }}
                 className={
@@ -133,9 +132,7 @@ const Aside = ({ isActive, setIsActive }) => {
       </div>
       <div className="price">
         <h3>price</h3>
-        <p className="price-text">
-          ${price.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-        </p>
+        <p className="price-text">${price / 100}</p>
         <input
           className="range-input"
           type="range"
