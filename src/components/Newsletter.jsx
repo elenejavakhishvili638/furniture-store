@@ -7,11 +7,13 @@ const Newsletter = () => {
       <div className="newsletter-wrap">
         <h3>Join our newsletter and get 20% off</h3>
         <div className="newsletter-sub">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            sint unde quaerat ratione soluta veniam provident adipisci cumque
-            eveniet tempore?
-          </p>
+          <div className="newsletter-text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              sint unde quaerat ratione soluta veniam provident adipisci cumque
+              eveniet tempore?
+            </p>
+          </div>
           <form className="sub">
             <input type="text" placeholder="Enter Email" />
             <button>Subscribe</button>

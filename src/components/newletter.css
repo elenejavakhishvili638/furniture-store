@@ -32,7 +32,7 @@
   border: 1px solid #222;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
-  width: 350px;
+  min-width: 100px;
 }
 
 .sub button {
@@ -47,6 +47,7 @@
   color: #222;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+  min-width: 50px;
 }
 
 .sub button:hover {
@@ -56,11 +57,29 @@
 @media (min-width: 992px) {
   .newsletter-sub {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
   .newsletter-wrap p {
     max-width: 500px;
+  }
+
+  .sub input {
+    width: 350px;
+  }
+
+  .newsletter-wrap h3 {
+    text-align: center;
+  }
+
+  .newsletter-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sub {
+    display: flex;
+    justify-content: center;
   }
 }

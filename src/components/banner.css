@@ -12,7 +12,17 @@
   line-height: 1.25rem;
 }
 
-.page-one a {
+.page-one-text {
   color: #795744;
   transition: all 0.3s linear;
+}
+
+.page-one-active-text {
+  color: #453227;
+}
+
+@media (min-width: 800px) {
+  .banner h3 {
+    font-size: 2rem;
+  }
 }

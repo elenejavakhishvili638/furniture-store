@@ -43,6 +43,14 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "CHANGE_PRICE", payload: clicked });
   };
 
+  const gridView = () => {
+    dispatch({ type: "CHANGE_GRID_VIEW" });
+  };
+
+  const listView = () => {
+    dispatch({ type: "CHANGE_LIST_VIEW" });
+  };
+
   const filterBy = (event) => {
     let name = event.target.name;
     let value = event.target.value;
@@ -73,12 +81,7 @@ const FilterProvider = ({ children }) => {
   };
 
   const sortBy = (event) => {
-    // let name = event.target.name;
     let value = event.target.textContent;
-
-    // if (name === "sort_by") {
-    //   value = event.target.textContent;
-    // }
 
     dispatch({ type: "SORT_BY", payload: { value } });
   };
@@ -96,6 +99,8 @@ const FilterProvider = ({ children }) => {
         filterBy,
         clearFilters,
         sortBy,
+        gridView,
+        listView,
       }}
     >
       {children}

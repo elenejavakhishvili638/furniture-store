@@ -118,6 +118,10 @@
   cursor: pointer;
 }
 
+.product-list-length {
+  max-height: 21px;
+}
+
 .sortby {
   display: flex;
   align-items: center;

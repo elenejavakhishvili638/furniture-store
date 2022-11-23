@@ -19,6 +19,33 @@
   font-size: 2rem;
 }
 
+.choose-amount-cart {
+  width: 75px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.choose-amount-cart button {
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  padding: 1rem 0px;
+  width: 2rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 0.5rem;
+  font-size: 1rem;
+}
+
+.choose-amount-cart h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
 .add-to-cart-btn {
   margin-top: 1rem;
   width: 140px;

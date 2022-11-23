@@ -6,7 +6,7 @@ import Desk from "../images/hero-bcg.jpeg";
 const About = () => {
   return (
     <div className="about">
-      <Banner pageTwo="About" />
+      <Banner pageTwo="/about" />
       <div className="about-content">
         <img src={Desk} alt="pic" />
         <div>

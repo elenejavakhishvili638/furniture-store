@@ -6,7 +6,8 @@ import ProductBox from "./ProductBox";
 import { useFilterContext } from "../context/filter_context";
 
 const ProductsList = ({ isActive, setIsActive, products }) => {
-  const { sort_by, changePrice, sortBy } = useFilterContext();
+  const { sort_by, changePrice, sortBy, grid_view, gridView, listView } =
+    useFilterContext();
   const [active, setActive] = useState(true);
 
   const price = [
@@ -21,23 +22,25 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
       <div className="product-list-header">
         <div className="btn-icons">
           <button
-            className={active ? "active-btn bar" : "inactive-btn bar"}
+            className={grid_view ? "active-btn bar" : "inactive-btn bar"}
             onClick={() => {
-              setActive(true);
+              // setActive(true);
+              gridView();
             }}
           >
             <BsFillGridFill />
           </button>
           <button
-            className={!active ? "active-btn grid" : "inactive-btn grid"}
+            className={!grid_view ? "active-btn grid" : "inactive-btn grid"}
             onClick={() => {
-              setActive(false);
+              // setActive(false);
+              listView();
             }}
           >
             <FaBars />
           </button>
         </div>
-        <p>{products.length} Products Found</p>
+        <p className="product-list-length">{products.length} Products Found</p>
         <hr />
         <div className="section">
           <div className="sortby">
@@ -74,7 +77,7 @@ const ProductsList = ({ isActive, setIsActive, products }) => {
         </div>
       </div>
       <div className="product-list-wrap">
-        <ProductBox products={products} active={active} />
+        <ProductBox products={products} grid_view={grid_view} />
       </div>
     </div>
   );

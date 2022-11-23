@@ -15,7 +15,7 @@ const Products = () => {
 
   return (
     <div className="products">
-      <Banner pageTwo="products" />
+      <Banner pageTwo="/products" />
       <div className="products-wrap">
         <Aside isActive={isActive} setIsActive={setIsActive} />
         {loading ? (

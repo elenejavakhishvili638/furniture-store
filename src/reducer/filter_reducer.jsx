@@ -108,6 +108,20 @@ const filter_reducer = (state, action) => {
     };
   }
 
+  if (action.type === "CHANGE_GRID_VIEW") {
+    return {
+      ...state,
+      grid_view: true,
+    };
+  }
+
+  if (action.type === "CHANGE_LIST_VIEW") {
+    return {
+      ...state,
+      grid_view: false,
+    };
+  }
+
   if (action.type === "CLEAR_FILTERS") {
     console.log(state);
 

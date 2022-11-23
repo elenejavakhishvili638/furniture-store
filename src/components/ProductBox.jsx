@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { BiSearchAlt2 } from "react-icons/bi";
 import "./productBox.css";
 
-const ProductBox = ({ products, active }) => {
+const ProductBox = ({ products, grid_view }) => {
   return (
-    <div className={active ? "product-box" : "product-box-grid"}>
+    <div className={grid_view ? "product-box" : "product-box-grid"}>
       {products &&
         products.map((product) => {
           const { id, name, price, image, description } = product;
           return (
             <div key={id} className="product-container">
-              {active ? (
+              {grid_view ? (
                 <div>
                   <div className="hover-over-product">
                     <img className="pic" alt="pic" src={image} />

@@ -23,11 +23,11 @@ const Product = () => {
 
   const { name } = single_product;
 
-  console.log(loading);
+  // console.log(loading);
 
   return (
     <div className="product-container">
-      <Banner pageTwo="products /" pageThree={name} />
+      <Banner pageTwo="/products" pageThree={`/${name}`} />
       <div className="product-wrap">
         <div className="back-to-products">
           <Link to="/products">back to products</Link>
