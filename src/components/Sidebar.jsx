@@ -30,7 +30,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      <CartBtn />
+      <CartBtn closeSidebar={closeSidebar} />
     </div>
   );
 };

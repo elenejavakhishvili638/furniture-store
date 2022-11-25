@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./chooseColor.css";
 import { ImCheckmark } from "react-icons/im";
 
-const ChooseColor = ({ single_product }) => {
+const ChooseColor = ({ single_product, setColor }) => {
   const { colors } = single_product;
   const [select, setSelect] = useState(0);
 
@@ -21,6 +21,7 @@ const ChooseColor = ({ single_product }) => {
               style={{ background: color }}
               onClick={() => {
                 setSelect(index);
+                setColor(color);
               }}
               className={`chosen-color ${handleColorClass(index, color)}`}
               key={index}

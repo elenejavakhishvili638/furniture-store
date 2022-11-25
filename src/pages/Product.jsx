@@ -14,16 +14,41 @@ const Product = () => {
   const [index, setIndex] = useState(0);
   const { fetchSingleProduct, single_product, loading } = useProductContext();
   const location = useLocation();
-
+  const { name, stock, colors } = single_product;
+  const [amount, setAmount] = useState(1);
+  const [color, setColor] = useState();
   const { product } = location.state;
+
+  // console.log(colors);
+
+  useEffect(() => {
+    const colorList = colors && colors[0];
+    setColor(colorList);
+  }, [colors]);
 
   useEffect(() => {
     fetchSingleProduct(`${single_product_url}${product.id}`);
   }, [product.id]);
 
-  const { name } = single_product;
+  const increase = () => {
+    setAmount((prevValue) => {
+      let tempAmount = prevValue + 1;
+      if (tempAmount > stock) {
+        tempAmount = stock;
+      }
+      return tempAmount;
+    });
+  };
 
-  // console.log(loading);
+  const decrease = () => {
+    setAmount((prevValue) => {
+      let tempAmount = prevValue - 1;
+      if (tempAmount < 1) {
+        tempAmount = 1;
+      }
+      return tempAmount;
+    });
+  };
 
   return (
     <div className="product-container">
@@ -44,8 +69,15 @@ const Product = () => {
             />
             <div>
               <ImageDescription single_product={single_product} />
-              <ChooseColor single_product={single_product} />
-              <AddToCart single_product={single_product} />
+              {/* <ChooseColor single_product={single_product} /> */}
+              <AddToCart
+                single_product={single_product}
+                increase={increase}
+                decrease={decrease}
+                amount={amount}
+                color={color}
+                setColor={setColor}
+              />
             </div>
           </div>
         )}
