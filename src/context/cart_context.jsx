@@ -4,7 +4,7 @@ import cart_reducer from "../reducer/cart_reducer";
 const CartContext = createContext();
 
 const initialState = {
-  cart_list: [],
+  cart_list: JSON.parse(localStorage.getItem("cart")) || [],
   total_item: 0,
   total_amount: 0,
 };
@@ -36,6 +36,7 @@ const CartProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart_list));
     if (state.cart_list) {
       dispatch({ type: "CALCULATE_TOTALS" });
     }

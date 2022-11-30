@@ -14,7 +14,7 @@ const cart_reducer = (state, action) => {
       }
     });
 
-    console.log(id);
+    // console.log(id);
     return { ...state, cart_list: tempCart };
   }
 
@@ -32,7 +32,7 @@ const cart_reducer = (state, action) => {
       })
       .filter((item) => item.amount !== 0);
 
-    console.log(id);
+    // console.log(id);
     return { ...state, cart_list: tempCart };
   }
 
@@ -115,7 +115,6 @@ const cart_reducer = (state, action) => {
       { total: 0, amount: 0 }
     );
     const { total, amount } = totals;
-    console.log("ll", totals);
     return { ...state, total_item: amount, total_amount: total };
   }
 };

@@ -16,7 +16,7 @@ const AddToCart = ({
   const [select, setSelect] = useState(false);
   const { stock, id } = single_product;
 
-  console.log(stock);
+  // console.log(stock);
   return (
     <div className="add-to-cart-container">
       {!bin && (
@@ -35,7 +35,11 @@ const AddToCart = ({
         <button
           name="increase"
           onClick={() => {
-            increase(id, amount, stock);
+            if (single_product.stock !== 0) {
+              increase(id, amount, stock);
+            } else {
+              setSelect(true);
+            }
           }}
         >
           +

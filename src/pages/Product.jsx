@@ -69,7 +69,6 @@ const Product = () => {
             />
             <div>
               <ImageDescription single_product={single_product} />
-              {/* <ChooseColor single_product={single_product} /> */}
               <AddToCart
                 single_product={single_product}
                 increase={increase}

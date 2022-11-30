@@ -8,7 +8,7 @@ import EmptyCart from "../components/EmptyCart";
 
 const Cart = () => {
   const { cart_list, clear_cart, total_amount } = useCartContext();
-  console.log(useCartContext());
+  // console.log(useCartContext());
   return (
     <div>
       {cart_list && cart_list.length === 0 ? (

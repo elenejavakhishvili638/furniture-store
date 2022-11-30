@@ -40,11 +40,13 @@ const CartProducts = ({ cart_list }) => {
                 decrease={decrease_amount}
                 single_product={item}
               />
-              <p className="desktop-total">${(price / 100) * amount}</p>
+              <p className="desktop-total">
+                ${((price / 100) * amount).toFixed(2)}
+              </p>
               <button
                 className="bin"
                 onClick={() => {
-                  console.log(id);
+                  // console.log(id);
                   remove_from_cart(id);
                 }}
               >
