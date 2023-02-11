@@ -106,6 +106,7 @@ const cart_reducer = (state, action) => {
   if (action.type === "CALCULATE_TOTALS") {
     const totals = state.cart_list.reduce(
       (cartTotal, item) => {
+        // console.log(cartTotal, item);
         const { price, amount } = item;
         const itemPrice = (price / 100) * amount;
         cartTotal.amount += amount;
@@ -114,6 +115,7 @@ const cart_reducer = (state, action) => {
       },
       { total: 0, amount: 0 }
     );
+    console.log(totals);
     const { total, amount } = totals;
     return { ...state, total_item: amount, total_amount: total };
   }

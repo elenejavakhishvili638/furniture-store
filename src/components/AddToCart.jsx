@@ -16,7 +16,6 @@ const AddToCart = ({
   const [select, setSelect] = useState(false);
   const { stock, id } = single_product;
 
-  // console.log(stock);
   return (
     <div className="add-to-cart-container">
       {!bin && (
